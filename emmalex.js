@@ -32,12 +32,12 @@ app.get('/api', (req, res) => {
     const date = new Date();
     // const utcTime = new Date(date .getTime() + (date.getTimezoneOffset() + 2 * 60) * 60000);
 
-    const UtcTime = date.toISOString().replace(/\.\d{3}Z$/, 'Z');
+    const utcTime = date.toISOString().replace(/\.\d{3}Z$/, 'Z');
 
     const response = {
         slack_name: slackName,
         current_day: currentDay,
-        utc_time: formatUtcTime,
+        utc_time: utcTime,
         track: hngxTrack,
         github_file_url: githubFileUrl,
         github_repo_url: githubRepoUrl,
