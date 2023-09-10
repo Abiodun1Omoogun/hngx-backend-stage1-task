@@ -32,7 +32,7 @@ app.get('/api', (req, res) => {
     const date = new Date();
     // const utcTime = new Date(date .getTime() + (date.getTimezoneOffset() + 2 * 60) * 60000);
 
-    const formatUtcTime = date.toISOString().replace(/\.\d{3}Z$/, 'Z');
+    const UtcTime = date.toISOString().replace(/\.\d{3}Z$/, 'Z');
 
     const response = {
         slack_name: slackName,
