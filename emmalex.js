@@ -15,9 +15,13 @@ app.get('/api', (req, res) => {
         return res.status(400).json({ error: 'slack_name and track parameters are required' });   
     }
 
+    // slack name & track
     const slackName = 'Emmalex';
-
     const hngxTrack = 'backend';
+
+    // Github repo & file
+    const githubFileUrl = 'https://github.com/Abiodun1Omoogun/hngx-backend-stage1-task/blob/main/emmalex.js';
+    const githubRepoUrl = 'https://github.com/Abiodun1Omoogun/hngx-backend-stage1-task';
 
     //  current day
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -33,6 +37,8 @@ app.get('/api', (req, res) => {
         current_day: currentDay,
         utc_time: utcTime.toISOString(),
         track: hngxTrack,
+        github_file_url: githubFileUrl,
+        github_repo_url: githubRepoUrl,
         status_code: 200,
     };
 
