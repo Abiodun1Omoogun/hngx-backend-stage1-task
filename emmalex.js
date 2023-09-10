@@ -28,11 +28,11 @@ app.get('/api', (req, res) => {
     const currentDayIndex = new Date().getUTCDay();
     const currentDay = daysOfWeek[currentDayIndex];
 
-    // current UTC time with a +/-2 minute window
+    // current UTC time 
     const date = new Date();
-    const utcTime = new Date(date .getTime() + (date.getTimezoneOffset() + 2 * 60) * 60000);
+    // const utcTime = new Date(date .getTime() + (date.getTimezoneOffset() + 2 * 60) * 60000);
 
-    const formatUtcTime = utcTime.toISOString().replace(/\.\d{3}Z$/, 'Z');
+    const formatUtcTime = date.toISOString().replace(/\.\d{3}Z$/, 'Z');
 
     const response = {
         slack_name: slackName,
